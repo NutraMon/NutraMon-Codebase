@@ -1,2 +1,2 @@
 # NutraMon-Codebase
-A digital Pet .....or is it? 
+A digital Pet. 
