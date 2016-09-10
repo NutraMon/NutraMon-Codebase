@@ -49,9 +49,27 @@ span{
     cursor:pointer; 
 }
 
-.hud-item:hover{
-    color:#fff; 
+
+#share-icon:hover{
+    color:aquamarine; 
+}
+
+#food-input-icon:hover{
+    color:darkgreen; 
+}
+
+#stats-icon:hover{
+    color:darkred; 
     
+}
+
+#sign-out-icon:hover{
+    color:purple; 
+}
+
+
+#settings-icon:hover{
+    color:gold; 
 }
 
 #avatar{
@@ -67,6 +85,7 @@ span{
     filter: blur(4px);
 }
 
+/*overlay menu css*****************************/ 
 .overlay-menu{
     max-width:100%;
     position:absolute;
@@ -103,15 +122,17 @@ span{
 }
 
 .results{
-    margin-top:50px; 
+    margin-top:5px;
+    display:block; 
 }
-
 .results h3{
     margin:15px 40px; 
     font-style: italic;
+    font-size:1.5em; 
     padding:5px;
+    cursor:pointer; 
     border:1px solid transparent;
-    border-radius:15px; 
+    border-radius:5px; 
     background-image: -webkit-gradient(
   linear, left top, left bottom, from(rgba(255,255,255,0.4)),
   to(rgba(0,0,0,0.1)), color-stop(1,#000));
@@ -124,15 +145,34 @@ span{
     background-color:#777;
     margin:0px;
 }
-/* search input**************************/ 
 
+.back{
+    float:left;
+    margin-left:25px;
+    margin-top:75px; 
+    cursor:pointer; 
+    
+}
+
+.info{
+    margin:25px; 
+}
+
+.info h2{
+    
+}
+
+
+/* search input**************************/ 
 .search{
     border:3px solid #777; 
     text-align: center;
     width:50px;
     border-radius:50px;
     margin-top:15px; 
-    margin-left:25px; 
+    margin-left:25px;
+    margin-bottom:50px;
+    display:block; 
 }
 
 
@@ -157,6 +197,8 @@ span{
 }
 
 
+
+/*media queries**************************************/ 
 @media screen and (max-width:475px){
    
     #avatar img{
@@ -170,4 +212,19 @@ span{
     .overlay-menu{
         height:550px;
     }
+    
+
+    #food-input-icon{
+        color:darkgreen; 
+    }
+
+    #stats-icon{
+        color:darkred; 
+
+    }
+
+    
+
+
+  
 }
