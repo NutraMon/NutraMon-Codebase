@@ -89,7 +89,7 @@ span{
 .overlay-menu{
     max-width:100%;
     position:absolute;
-    width:600px; 
+    width:605px; 
     height:500px;
     text-align: center;
     z-index: 2;
@@ -149,9 +149,16 @@ span{
 .back{
     float:left;
     margin-left:25px;
-    margin-top:75px; 
+    margin-top:125px; 
     cursor:pointer; 
     
+}
+
+.done{
+    float:right; 
+    margin-top:125px;
+    margin-right:25px;
+    cursor:pointer; 
 }
 
 .info{
@@ -195,7 +202,6 @@ span{
     cursor:pointer;
     
 }
-
 
 
 /*media queries**************************************/ 

@@ -1,4 +1,4 @@
-var currentMenu; 
+var currentMenu, maxEnergy, strength, defense, level; 
 
 $('.hud-item').on('click', function(){
     var id = $(this).attr('id'); 
@@ -10,7 +10,7 @@ $('.hud-item').on('click', function(){
 function triggerOverlayMenu(){
     $('.overlay-menu').empty(); 
     $('.overlay-menu').css('display', 'block');
-    $('.game').css('opacity', '0.8');
+    $('.game').css('opacity', '0.9');
     $('.game').addClass('blurred');
     
 }
@@ -53,7 +53,33 @@ function loadFoodMenu(){
     //load results 
     setTimeout(function(){
         $('.overlay-menu').append(results);
-    }, 2000);  
+    }, 1000);
+    
+     setTimeout(function(){
+         var back = $('<h3><div class="back"><i class="fa fa-undo fa-sm"></i> Back</div></h3>');
+             back.on('click',function(){
+            $('.overlay-menu').hide();
+            $('.game').css('opacity', '1');
+            $('.game').removeClass('blurred');
+        })
+         
+          var done = $('<h3><div class="done"><i class="fa fa-check fa-sm"></i> Done</div></h3>');
+         
+            done.on('click',function(){
+            $('.overlay-menu').hide();
+            $('.game').css('opacity', '1');
+            $('.game').removeClass('blurred');
+            })
+         
+            
+            $('.overlay-menu').append(back);
+            $('.overlay-menu').append(done); 
+         
+         
+         
+    }, 1200); 
+    
+    
    
     console.log('food menu loaded'); 
     
@@ -70,21 +96,34 @@ function loadFoodMenu(){
 })
 }
 
+
 function loadStatsMenu(){
-    var maxEnergy =0, strength = 0, defense = 0, speed = 0, level=1; 
-    $('.overlay-menu').append('<div class= "stats">'); 
+   
+    ref.on('value',function(snapshot){
+        maxEnergy = snapshot.val().maxEnergy; 
+        strength = snapshot.val().strength; 
+        defense = snapshot.val().defense; 
+        speed = snapshot.val().speed; 
+        level = snapshot.val().level; 
+        })
+
     
+    $('.overlay-menu').append('<div class= "stats">'); 
     
     
    var statsH1= $('.stats').append('<h1><i style="color:darkred;" class="fa fa-heartbeat fa-sm"></i> Nutristats!</h1>')
    
-   var info = $('<div>');
+    var info = $('<div>');
+    
+    var setInfo = function(){
     info.append('<h2>Max Energy: '+maxEnergy+ '</h2>'); 
     info.append('<h2>Strength: '+strength+ '</h2>'); 
     info.append('<h2>Defense: '+defense+ '</h2>'); 
     info.append('<h2>Speed: '+speed+ '</h2>'); 
     info.append('<h2>Level: '+level+ '</h2>'); 
-    
+}
+
+setTimeout(setInfo, 500); 
     
    var back = $('<h3><div class="back"><i class="fa fa-undo fa-sm"></i> Back</div></h3>');
     
