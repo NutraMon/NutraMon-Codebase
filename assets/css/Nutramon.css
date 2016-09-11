@@ -1,0 +1,39 @@
+html, body{
+	background-image: url("../images/Battleback_coliseum.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%; width: 100%;
+}
+
+h2{
+	margin-top: 55px;
+	text-align: center;
+	color: white;
+}
+
+#user1_nutramon{
+	background-color: #800000;
+    background: rgba(255,0,0,.5);
+    border: solid;
+    border-width: thin;
+    border-color: white;
+    
+
+
+}
+
+#user2_nutramon{
+	background-color: #00008b;
+	background: rgba(0,0,128,.5);
+	float: right;
+	border: solid;
+	border-width: thin;
+	border-color: white; 
+	
+}
+
+#nutramon2{
+	float: right;
+}
