@@ -1,8 +1,9 @@
+//globals 
+
+var menu = []; 
 
 //audio assests 
-
 var menuSound = new Audio('assets/audio/menuSound.mp3'); 
-    
 var confirmSound= new Audio('assets/audio/confirmSound.mp3'); 
 
 //plays sound 
@@ -76,6 +77,7 @@ function createBackBtn(){
             $('.search').animate({width:'50px'}, 500); 
             $('#search-field').animate({width:'0px'} ,500); 
             $('#search-field').css('border-left-style', 'hidden');
+             menu = []; 
         })
          
          //writes the back button to the page
@@ -104,6 +106,7 @@ function createDoneBtn(){
     }, 400)
 }
 
+
 //fills the overlay menu with the food menu screen. This is the core method of input for the application. 
 
 function loadFoodMenu(){
@@ -113,6 +116,9 @@ function loadFoodMenu(){
     
     //sets the html for the results pane
     var results = '<div class="col-xs-12"><div class ="results"></div></div>'; 
+    
+    //html for the added notification
+    var added = $('<div class="added"><h3>Added to Menu!</h3></div>'); 
                     
     //loads the search              
     $('.overlay-menu').append(search);
@@ -120,7 +126,9 @@ function loadFoodMenu(){
     
     //set results container
     $('.overlay-menu').append(results);
- 
+    
+    //for added notification 
+    $('.overlay-menu').append(added); 
     
     //set back button
     createBackBtn();   
@@ -212,13 +220,29 @@ function getFood(){
 
             //sets the results on click handler 
             $('.result-item').on('click', function(){
-                playSound(confirmSound); 
+                var self = $(this); 
                 
                 //sets resultId to the elements id
-                var resultId = $(this).attr('id'); 
+                var resultId = self.attr('id');
+                //gets the text of the element for use in the getNutrients call
+                var name = self.text(); 
                 
                 //call to get the nutrients for the food 
-                getNutrients(resultId);
+                getNutrients(resultId ,name);
+                
+                //lets user know they've slected an item 
+                playSound(confirmSound);
+                self.css('border-width', '3px'); 
+                self.css('color', 'gold'); 
+                self.css('border-color', 'darkgreen');
+                $('.added').fadeTo('fast', 1); 
+                $('.added').animate({fontSize:"50px"}, 500); 
+                
+                setTimeout(function(){
+                    self.hide();
+                    $('.added').fadeTo('fast', 0); 
+                    $('.added').animate({fontSize:"0px"}); 
+                },550); 
             })
 
         });
@@ -235,23 +259,40 @@ function getFood(){
 
 
 //queries the USDA nutrients database to get the nutritional info of the selected food
-function getNutrients(foodId){
-    //initialize nutrients variable
-    var nutrients; 
+function getNutrients(foodId, food){
     
+     
     var queryURL2 = "http://api.nal.usda.gov/ndb/reports/?ndbno=" +foodId+ "&type=f&format=json&api_key=HZETQl5FX9HBdYG4NyJzVta13UMr7ln8UtkIZmPJ";
     
 
     $.ajax({url: queryURL2, method: 'GET'}).done(function(response){
+            //initialize nutrients variable
+            var nutrients; 
         
             //sets nutrients to the nutrients array 
             nutrients = response.report.food.nutrients; 
         
-            console.log(nutrients);
-            
+            //set up nutrient variables to push to new object with information
+            var calories = nutrients[1].value.toString() + ' ' + nutrients[1].unit; 
+            var protein = nutrients[3].value.toString() + ' ' + nutrients[3].unit;
+            var fat = nutrients[4].value.toString() + ' ' + nutrients[4].unit;
+            var carbs = nutrients[6].value.toString() + ' ' + nutrients[6].unit;
+            var fiber = nutrients[7].value.toString() + ' ' + nutrients[7].unit;
+
+            var menuItem = {
+                name:food,
+                calories:calories,
+                fat:fat, 
+                carbs:carbs,
+                fiber:fiber
+            }
+
+            menu.push(menuItem); 
+            console.log(menu);   
 
     });
     
+   
 }
 
 //loads the player stats menu with database info

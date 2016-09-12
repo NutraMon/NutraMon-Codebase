@@ -57,11 +57,11 @@ span{
     color:aquamarine; 
 }
 
-#food-input-icon:hover{
+#food-input-icon{
     color:darkgreen; 
 }
 
-#stats-icon:hover{
+#stats-icon{
     color:darkred; 
     
 }
@@ -181,6 +181,17 @@ span{
     left:450px;
 }
 
+.added{
+    margin-left:25px;
+    margin-top:125px; 
+    color:darkgreen;
+    position:fixed;
+    top:290px;
+    left:215px;
+    opacity: 0; 
+    
+}
+
 .info{
     margin-top:59px; 
 }
@@ -223,7 +234,7 @@ span{
     width:50px;
     border-radius:50px;
     margin-top:15px; 
-    margin-left:25px;
+    margin-left:150px;
     margin-bottom:5px;
     display:block; 
 }
@@ -257,22 +268,15 @@ span{
     width:85%; 
     
     }
+    .search{
+        margin-left:50px;
+    }
     .game{
         height:550px;
     }
     
     .overlay-menu{
         height:550px;
-    }
-    
-
-    #food-input-icon{
-        color:darkgreen; 
-    }
-
-    #stats-icon{
-        color:darkred; 
-
     }
     
     .back{
@@ -282,6 +286,11 @@ span{
     .done{
         top:375px;
         left:275px;
+    }
+    
+    .added{
+        top:350px; 
+        left:100px
     }
 
     .results{
