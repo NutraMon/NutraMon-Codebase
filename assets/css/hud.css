@@ -1,7 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Audiowide);
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
 
 body{
-    background-color:#000; 
+    background-color:#000;
+   
+   
 }
 
 p{
@@ -28,6 +30,7 @@ span{
     color:#000;
     z-index: 1; 
     opacity: 1; 
+    
 }
 
 .hud-top{
@@ -72,6 +75,10 @@ span{
     color:gold; 
 }
 
+#nav-icon:hover{
+    color:#fff;
+}
+
 #avatar{
     max-width:100%; 
 }
@@ -88,13 +95,18 @@ span{
 /*overlay menu css*****************************/ 
 .overlay-menu{
     max-width:100%;
+    max-height:0px; 
     position:absolute;
     width:605px; 
-    height:500px;
+    height:600px;
     text-align: center;
     z-index: 2;
+    font-family: 'Open Sans Condensed', sans-serif;
     color:#fff;
     display:none;
+    opacity: 0; 
+    transition: max-height 0.40s ease-in-out;
+    
     
     background-image: -webkit-gradient(
   linear, left top, left bottom, from(rgba(0,0,0,0.8)),
@@ -117,15 +129,18 @@ span{
 }
 
 .overlay-menu h1{
-    margin-top:50px;
+    margin-top:25px;
     font-size:2.2em;
+    
 }
 
 .results{
     margin-top:5px;
-    display:block; 
+    display:block;
+    height:275px; 
+    overflow: scroll;
 }
-.results h3{
+.result-item{
     margin:15px 40px; 
     font-style: italic;
     font-size:1.5em; 
@@ -151,6 +166,8 @@ span{
     margin-left:25px;
     margin-top:125px; 
     cursor:pointer; 
+    position:fixed;
+    top:325px; 
     
 }
 
@@ -159,15 +176,44 @@ span{
     margin-top:125px;
     margin-right:25px;
     cursor:pointer; 
+    position:fixed;
+    top:325px;
+    left:450px;
 }
 
 .info{
-    margin:25px; 
+    margin-top:59px; 
 }
 
 .info h2{
     
 }
+
+#Yes{
+    cursor:pointer; 
+    margin-top:100px;
+    margin-left:125px;
+    margin-right:125px;
+    border:1px solid transparent;
+    border-radius:5px; 
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(255,255,255,0.4)),
+  to(rgba(0,0,0,0.1)), color-stop(1,#000));
+}
+
+#No{
+    cursor:pointer; 
+    margin-top:75px;
+    margin-left:125px;
+    margin-right:125px;
+    border:1px solid transparent;
+    border-radius:5px; 
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(255,255,255,0.4)),
+  to(rgba(0,0,0,0.1)), color-stop(1,#000));
+}
+
+
 
 
 /* search input**************************/ 
@@ -178,7 +224,7 @@ span{
     border-radius:50px;
     margin-top:15px; 
     margin-left:25px;
-    margin-bottom:50px;
+    margin-bottom:5px;
     display:block; 
 }
 
@@ -228,9 +274,18 @@ span{
         color:darkred; 
 
     }
-
     
+    .back{
+        top:375px;
+    }
 
+    .done{
+        top:375px;
+        left:275px;
+    }
 
+    .results{
+        height:325px;
+    }
   
 }
