@@ -1,5 +1,5 @@
 //globals
-var currentMenu, energy, strength, defense, level; 
+var energy, strength, defense, speed,exp, level; 
 
 //sets the firebase configuration
 var config = {
@@ -23,7 +23,8 @@ var ref = database.ref();
         strength = snapshot.val().strength; 
         defense = snapshot.val().defense; 
         speed = snapshot.val().speed; 
-        level = snapshot.val().level; 
+        level = snapshot.val().level;
+        exp = snapshot.val().exp; 
         }, function (errorObject) {
 
 		// throwing an error if the database request fails 

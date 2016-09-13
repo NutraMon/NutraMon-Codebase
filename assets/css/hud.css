@@ -181,6 +181,16 @@ span{
     left:450px;
 }
 
+.next{
+    float:right; 
+    margin-top:125px;
+    margin-right:25px;
+    cursor:pointer; 
+    position:fixed;
+    top:325px;
+    left:450px;
+}
+
 .added{
     margin-left:25px;
     margin-top:125px; 
@@ -222,6 +232,10 @@ span{
     background-image: -webkit-gradient(
   linear, left top, left bottom, from(rgba(255,255,255,0.4)),
   to(rgba(0,0,0,0.1)), color-stop(1,#000));
+}
+
+#meal-info{
+    
 }
 
 
@@ -284,6 +298,11 @@ span{
     }
 
     .done{
+        top:375px;
+        left:275px;
+    }
+    
+    .next{
         top:375px;
         left:275px;
     }
