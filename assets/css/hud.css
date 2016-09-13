@@ -1,0 +1,320 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+body{
+    background-color:#000;
+   
+   
+}
+
+p{
+    color:#fff;
+    font-family: 'Audiowide', cursive; 
+}
+
+a{
+    text-decoration: none; 
+    color:aquamarine; 
+    font-family: 'Audiowide', cursive; 
+}
+
+span{
+    color:green; 
+}
+
+.game{
+    position:absolute; 
+    max-width:100%; 
+    width:600px;
+    height:500px; 
+    text-align: center;
+    color:#000;
+    z-index: 1; 
+    opacity: 1;
+    margin:0 auto;
+    
+}
+
+.hud-top{
+    width:100%;
+    height:75px; 
+    background-color:#777;
+    margin:0px;
+}
+
+.nutramon{
+    width:100%;
+    text-align: center;
+    background-color:#A9B88E;
+    margin:0px;
+}
+
+.hud-item{
+    padding:5px;
+    cursor:pointer; 
+}
+
+
+#share-icon:hover{
+    color:aquamarine; 
+}
+
+#food-input-icon{
+    color:darkgreen; 
+}
+
+#stats-icon{
+    color:darkred; 
+    
+}
+
+#sign-out-icon:hover{
+    color:purple; 
+}
+
+
+#settings-icon:hover{
+    color:gold; 
+}
+
+#nav-icon:hover{
+    color:#fff;
+}
+
+#avatar{
+    max-width:100%; 
+}
+#avatar img{
+    width:50%;
+    
+}
+
+.blurred{
+    -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+
+/*overlay menu css*****************************/ 
+.overlay-menu{
+    max-width:100%;
+    max-height:0px; 
+    position:absolute;
+    width:605px; 
+    height:600px;
+    text-align: center;
+    z-index: 2;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color:#fff;
+    display:none;
+    opacity: 0; 
+    transition: max-height 0.40s ease-in-out;
+    
+    
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(0,0,0,0.8)),
+  to(rgba(0,0,0,0.8)), color-stop(1,#a6a6a6)
+);
+    background-image: -moz-gradient(
+  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  to(rgba(80,80,80,0.2)), color-stop(1,#a6a6a6)
+);
+    background-image: -O-gradient(
+  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  to(rgba(80,80,80,0.2)), color-stop(1,#a6a6a6)
+);
+    background-image: -ms-gradient(
+  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  to(rgba(80,80,80,0.2)), color-stop(1,#a6a6a6)
+);
+
+    
+}
+
+.overlay-menu h1{
+    margin-top:25px;
+    font-size:2.2em;
+    
+}
+
+.results{
+    margin-top:5px;
+    display:block;
+    height:275px; 
+    overflow: scroll;
+}
+.result-item{
+    margin:15px 40px; 
+    font-style: italic;
+    font-size:1.5em; 
+    padding:5px;
+    cursor:pointer; 
+    border:1px solid transparent;
+    border-radius:5px; 
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(255,255,255,0.4)),
+  to(rgba(0,0,0,0.1)), color-stop(1,#000));
+    
+}
+
+.hud-bottom{
+    max-width:100%; 
+    height:75px; 
+    background-color:#777;
+    margin:0px;
+}
+
+.back{
+    float:left;
+    margin-left:25px;
+    margin-top:125px; 
+    cursor:pointer; 
+    position:fixed;
+    top:325px; 
+    
+}
+
+.done{
+    float:right; 
+    margin-top:125px;
+    margin-right:25px;
+    cursor:pointer; 
+    position:fixed;
+    top:325px;
+    left:450px;
+}
+
+.next{
+    float:right; 
+    margin-top:125px;
+    margin-right:25px;
+    cursor:pointer; 
+    position:fixed;
+    top:325px;
+    left:450px;
+}
+
+.added{
+    margin-left:25px;
+    margin-top:125px; 
+    color:darkgreen;
+    position:fixed;
+    top:290px;
+    left:215px;
+    opacity: 0; 
+    
+}
+
+.info{
+    margin-top:59px; 
+}
+
+.info h2{
+    
+}
+
+#Yes{
+    cursor:pointer; 
+    margin-top:100px;
+    margin-left:125px;
+    margin-right:125px;
+    border:1px solid transparent;
+    border-radius:5px; 
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(255,255,255,0.4)),
+  to(rgba(0,0,0,0.1)), color-stop(1,#000));
+}
+
+#No{
+    cursor:pointer; 
+    margin-top:75px;
+    margin-left:125px;
+    margin-right:125px;
+    border:1px solid transparent;
+    border-radius:5px; 
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(255,255,255,0.4)),
+  to(rgba(0,0,0,0.1)), color-stop(1,#000));
+}
+
+#meal-info{
+    
+}
+
+
+
+
+/* search input**************************/ 
+.search{
+    border:3px solid #777; 
+    text-align: center;
+    width:50px;
+    border-radius:50px;
+    margin-top:15px; 
+    margin-left:150px;
+    margin-bottom:5px;
+    display:block; 
+}
+
+
+#search-field{
+    background-color:transparent;
+    border:none; 
+    color:#fff; 
+    font-size:1.5em;
+    padding:5px;
+    width:0px;
+    border-left:3px hidden #777;
+    outline:none;  
+}
+
+
+#search-icon img{
+    width:25px;
+    vertical-align: middle;
+    margin-left:1px;
+    cursor:pointer;
+    
+}
+
+
+/*media queries**************************************/ 
+@media screen and (max-width:475px){
+   
+    #avatar img{
+    width:85%; 
+    
+    }
+    .search{
+        margin-left:50px;
+    }
+    .game{
+        height:550px;
+    }
+    
+    .overlay-menu{
+        height:550px;
+    }
+    
+    .back{
+        top:375px;
+    }
+
+    .done{
+        top:375px;
+        left:275px;
+    }
+    
+    .next{
+        top:375px;
+        left:275px;
+    }
+    
+    .added{
+        top:350px; 
+        left:100px
+    }
+
+    .results{
+        height:325px;
+    }
+  
+}

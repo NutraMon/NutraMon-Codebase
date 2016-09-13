@@ -29,12 +29,25 @@ body
 
 .auth-image
 {
-	width: 20%;	
+	width:40%;
+    
 }
 
 .navbar-brand
 {
-	width: 80%;
+	width: 100%;
+    height: 100%;
+    display:inline; 
+    
+}
+
+.navbar-brand p{
+    width:25%;
+    display: inline; 
+}
+#logo{
+    width:10%; 
+    
 }
 
 
