@@ -12,25 +12,24 @@
 
     <title>Nutrimon - The Nutrition Wizard!</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!-- BOOTSTRAP CORE CSS -->
    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
-    <!-- Custom Fonts -->
+    <!-- CUSTOM FONTS -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
 
 
-    <!-- Theme CSS -->
+    <!-- THEME CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     
 </head>
-
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
@@ -47,10 +46,9 @@
                  Nutrimon
 
                  </a>
-
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- COLLECT THE NAV LNKS, FORMS, AND OTHER CONTENT FOR TOGGLING -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
@@ -73,14 +71,12 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Intro Header -->
+    <!-- INTRO HEADER -->
     <header class="intro">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-
-                      
 
 <div class = "wrapper"><input id ="field" type="text" name= "field" size = 12></div>
                         
@@ -88,38 +84,15 @@
 
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
-
-                        <form>
-        <select name="Gender">
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-        </select>
-        </form>
-
                     </div>
                 </div>
             </div>
         </div>
 
- 
-
     </header>
 
-    <!-- My NutriMon Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                
-                <h2>My NutriMon</h2>
-                <br>
-                <br>
-                <img src="img/nutrimon.png" class="auth-image">
-                <p>Enter your user information and choose your avatar!</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- About NutriMon Section -->
+<!-- ABOUT NUTRIMON SECTION -->
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">  
@@ -127,25 +100,40 @@
                 <br>
                 <br>
                 <img src="img/nutrimon.png" class="auth-image">
-                <p>NutriMon is a free platform that motivates users to live a healthier lifestyle. Users are able to compare their snacks or meals with other users and a winner will be determined based on the healthiest snack/meals choice.</p>
+                <p>NutriMon is a free platform that motivates users to live a healthier lifestyle. User will input their snacks and/or meals and based on their nutritional values, they will receive stats and either go up a level or stay at their current one.</p>
             </div>
         </div>
     </section>
 
+
+    <!-- MY NUTRIMON SECTION -->
+    <section id="download" class="container content-section text-center">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <h2>My NutriMon</h2>
+                <br>
+                <br>
+                <img src="img/nutrimon.png" class="auth-image">
+                <p>Enter your snacks/meals and wait for your stats!</p>
+            </div>
+        </div>
+    </section>
     
-    <!-- Resources Section -->
+
+    <!-- RESOURCES SECTION -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h2>Resources</h2>
                 <img src="img/nutrimon.png" class="auth-image">
-                <p>In this section, you will find information about the APIs used, reference sources and a list of nutrition resources. The following APIs were utilized: </p>
-               
+                <p>The following APIs were utilized in the Nutrimon game: USDA Food Composition Database and the National Nutrient Database for Standard Reference Release 28.</p>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
+
+    <!-- FOOTER -->
     <footer>
         <div class="container text-center">
             <p>Copyright &copy; NutriMon 2016</p>
@@ -155,15 +143,15 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
+    <!-- BOOTSTRAPE CORE JAVASCRIPT -->
     <script src="vendor;l
     /bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
+    <!-- PLUGIN JAVASCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 
-    <!-- Theme JavaScript -->
+    <!-- THEME JAVASCRIPT -->
     <script src="js/grayscale.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -173,31 +161,24 @@
    var field = document.getElementById('field');
    var txt = "Get Started!";
       
-      
    function typing(input, str ){
        
-       var i=0, time = 300; 
-        
-       
-       var put =setInterval(function(){
+       var i=0, time = 300;  
+       var put =setInterval(function()
+       {
            input.value = str.slice(0, i++)
        }, time);
        
-       setTimeout(function(){ 
+       setTimeout(function()
+       { 
            clearInterval(put); 
            input.value="";
            typing(input,str); 
        }, time * str.length +5000);
-
-       
   }
    typing(field, txt); 
 
-
    </script>
-    }
-
-
 
 </body>
 
