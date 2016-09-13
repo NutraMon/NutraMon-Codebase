@@ -7,7 +7,12 @@ var DAILYCALORIES =2400;
 var DAILYPROTIEN =50 ; 
 var DAILYCARBS = 310 ;
 var DAILYFAT =70 ; 
-var DAILYFIBER =30 ; 
+var DAILYFIBER =30 ;
+
+//images 
+var CHARACTER = 'http://uk.tamagotchifriends.com/wp-content/uploads/sites/3/2013/11/wagassiertchi-feat.png';
+
+var ALTCHARACTER= 'http://us.tamagotchifriends.com/wp-content/uploads/sites/2/2013/11/patitchi-feat.png'; 
  
 
 
@@ -487,7 +492,27 @@ function loadStatsMenu(){
 
 //loads the settings menu for nutrimon customization
 function loadSettingsMenu(){
-    $('.overlay-menu').append('<h1>Settings</h1>');
+    $('.overlay-menu').append('<h1>Customize Nutrimon!</h1>');
+    
+    var male = $('<div><h3>Male<h3><img src='+CHARACTER+'></div>')
+    
+    male.on('click',function(){
+         playSound(confirmSound); 
+         $('#avatar img').attr('src', CHARACTER);
+        
+    })
+    
+    var female = $('<div><h3>Female<h3><img src='+ALTCHARACTER+'></div>')
+    
+    female.on('click',function(){
+         playSound(confirmSound); 
+         $('#avatar img').attr('src', ALTCHARACTER);
+
+    })
+    
+    $('.overlay-menu').append(male); 
+    
+    $('.overlay-menu').append(female); 
     
      //set back button
     createBackBtn(); 
@@ -495,9 +520,19 @@ function loadSettingsMenu(){
     
 }
 
+
 //loads the share menu
 function loadShareMenu(){
-    $('.overlay-menu').append('<h1>Share Options</h1>');
+    $('.overlay-menu').append('<h1>Share Menu</h1>');
+    
+    $('.overlay-menu').append('<h3>Friends List</h3>');
+    
+    $('.overlay-menu').append('<div class ="results"><h4 class="result-item">johndoe2016</h4><h4 class="result-item">nutriMan08293</h4><h4 class="result-item">mySoulyourBeats</h4><h4 class="result-item">nutriUser90000</h4></div>')
+    
+    $('.overlay-menu').append('<div>This feature is a work in progress and names are for example purposes only</div>')
+    
+    
+    
     
     //set back button
     createBackBtn(); 
@@ -534,6 +569,7 @@ function signOut(){
 function loadNavMenu(){
     $('.overlay-menu').append('<h1>Navigation</h1>');
     
+    $('.overlay-menu').append('<h2>Arena Mode Comming soon!</h2><h1><i class="fa fa-gamepad fa-lg"></i></h1>')
     //set back button
     createBackBtn();  
 }
