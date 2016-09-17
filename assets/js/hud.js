@@ -1,5 +1,4 @@
 //globals 
-
 var menu = []; 
 
 //constants 
@@ -9,20 +8,17 @@ var DAILYCARBS = 310 ;
 var DAILYFAT =70 ; 
 var DAILYFIBER =30 ;
 
-//images 
+//image constants 
 var CHARACTER = 'http://uk.tamagotchifriends.com/wp-content/uploads/sites/3/2013/11/wagassiertchi-feat.png';
 
 var ALTCHARACTER= 'http://us.tamagotchifriends.com/wp-content/uploads/sites/2/2013/11/patitchi-feat.png'; 
  
-
-
 
 //audio assests 
 var menuSound = new Audio('assets/audio/menuSound.mp3'); 
 var confirmSound= new Audio('assets/audio/confirmSound.mp3'); 
 
 //plays sound 
-
 function playSound(sound){
     sound.volume = .5;  
     sound.play(); 
@@ -155,7 +151,7 @@ function loadFoodMenu(){
     /*on keyup event trigger for live search type of functionality 
     initialize timer and variable for the interval*/
     var typingTimer;                
-    var doneTypingInterval = 1000; 
+    var doneTypingInterval = 1500; 
     var $input = $('#search-field');
 
     //on keyup, start the countdown
@@ -198,7 +194,7 @@ function getFood(){
         var userFood = $('#search-field').val().trim();
         
         //url to run in the ajax call
-        var queryURL = "http://api.nal.usda.gov/ndb/search/?format=json&q="+userFood+"&sort=n&max="+limit+"&offset=0&api_key=HZETQl5FX9HBdYG4NyJzVta13UMr7ln8UtkIZmPJ";
+        var queryURL = "https://api.nal.usda.gov/ndb/search/?format=json&q="+userFood+"&sort=n&max="+limit+"&offset=0&api_key=HZETQl5FX9HBdYG4NyJzVta13UMr7ln8UtkIZmPJ";
     
         //array with the food items to be set in the results pane
         var foods=[];
@@ -268,7 +264,7 @@ function getFood(){
             if(foods.length < 1){
             $('.results').append('<div><h3>No results found..</h3></div>'); 
         }
-      },1000)
+      },2000)
         
 }
 
@@ -277,7 +273,7 @@ function getFood(){
 function getNutrients(foodId, food){
     
      
-    var queryURL2 = "http://api.nal.usda.gov/ndb/reports/?ndbno=" +foodId+ "&type=f&format=json&api_key=HZETQl5FX9HBdYG4NyJzVta13UMr7ln8UtkIZmPJ";
+    var queryURL2 = "https://api.nal.usda.gov/ndb/reports/?ndbno=" +foodId+ "&type=f&format=json&api_key=HZETQl5FX9HBdYG4NyJzVta13UMr7ln8UtkIZmPJ";
     
 
     $.ajax({url: queryURL2, method: 'GET'}).done(function(response){
@@ -394,19 +390,35 @@ function calcStats(totals){
     //stats additions 
      exp += 5;
     
-     energy = Math.round((totals[0] / DAILYCALORIES) * 100);
-     strength = Math.round((totals[1] / DAILYPROTIEN) * 100);
-     defense= Math.round((totals[2] / DAILYFAT) * 100);
-     speed = Math.round((totals[3] / DAILYCALORIES) * 100);
+    var totalCalories = totals[0]; 
+    var totalProtein = totals[1]; 
+    var totalFat = totals[2]; 
+    var totalCarbs = totals[3]; 
+    var totalFiber = totals[4]; 
     
-    if(energy > DAILYCALORIES){
+     energy = Math.round((totalCalories / DAILYCALORIES) * 100);
+     strength = Math.round((totalProtein / DAILYPROTIEN) * 100);
+     defense= Math.round((totalFat / DAILYFAT) * 100);
+     speed = Math.round((totalFiber / DAILYCALORIES) * 100);
+    
+    if(totalCalories > DAILYCALORIES){
         energy = energy / 2; 
+    }
+    else if(totalProtein > DAILYPROTIEN){
+        strength = strength / 2; 
+    }
+    
+    else if(totalFat > DAILYFAT){
+        defense = defense / 2; 
+    }
+    
+    else if(totalCarbs > DAILYCARBS){
+        speed = speed / 2; 
     }
     
     if(exp % 100 === 0){
         level++; 
     }
-    
     
     
     ref.set({
@@ -426,9 +438,7 @@ function calcStats(totals){
      $('.overlay-menu').prepend('<h1 style="color:red">+'+5+' exp added!</h1>'); 
      $('.overlay-menu').append(next); 
     
-    
-    
-    
+        //next on click handler 
          next.on('click',function(){
              playSound(confirmSound); 
             $('.next').css('color', 'darkgreen');
@@ -453,7 +463,6 @@ function calcStats(totals){
              
     
          })
-    
     
 }
 
