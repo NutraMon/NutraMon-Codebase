@@ -2,11 +2,11 @@
 var menu = []; 
 
 //constants 
-var DAILYCALORIES =2400; 
-var DAILYPROTIEN =50 ; 
+var DAILYCALORIES = 2400; 
+var DAILYPROTIEN = 50 ; 
 var DAILYCARBS = 310 ;
-var DAILYFAT =70 ; 
-var DAILYFIBER =30 ;
+var DAILYFAT = 70 ; 
+var DAILYFIBER = 30 ;
 
 //image constants 
 var CHARACTER = 'http://uk.tamagotchifriends.com/wp-content/uploads/sites/3/2013/11/wagassiertchi-feat.png';
@@ -358,6 +358,7 @@ function getTotals(){
         for(var info in foodObj){
             
             var array = foodObj[info]; 
+            
             switch(info){
                     
                 case 'Calories':
@@ -533,15 +534,10 @@ function loadSettingsMenu(){
 //loads the share menu
 function loadShareMenu(){
     $('.overlay-menu').append('<h1>Share Menu</h1>');
-    
     $('.overlay-menu').append('<h3>Friends List</h3>');
-    
     $('.overlay-menu').append('<div class ="results"><h4 class="result-item">johndoe2016</h4><h4 class="result-item">nutriMan08293</h4><h4 class="result-item">mySoulyourBeats</h4><h4 class="result-item">nutriUser90000</h4></div>')
     
     $('.overlay-menu').append('<div>This feature is a work in progress and names are for example purposes only</div>')
-    
-    
-    
     
     //set back button
     createBackBtn(); 
