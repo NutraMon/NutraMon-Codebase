@@ -30,7 +30,12 @@ span{
     color:#000;
     z-index: 1; 
     opacity: 1;
+    -ms-overflow-style:none;
     
+}
+
+.game::-webkit-scrollbar{
+    width:0 !important; 
 }
 
 .hud-top{
