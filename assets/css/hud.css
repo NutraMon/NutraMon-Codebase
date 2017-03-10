@@ -34,7 +34,7 @@ span{
     
 }
 
-::-webkit-scrollbar{
+.game::-webkit-scrollbar{
     width:0 !important; 
 }
 
@@ -146,6 +146,10 @@ span{
     cursor: pointer; 
 }
 
+.overlay-menu::-webkit-scrollbar{
+    width:0 !important;
+}
+
 .results{
     margin-top:5px;
     display:block;
@@ -164,6 +168,10 @@ span{
   linear, left top, left bottom, from(rgba(255,255,255,0.4)),
   to(rgba(0,0,0,0.1)), color-stop(1,#000));
     
+}
+
+.results::-webkit-scrollbar{
+    width:0 !important;
 }
 
 .hud-bottom{
@@ -245,11 +253,6 @@ span{
   linear, left top, left bottom, from(rgba(255,255,255,0.4)),
   to(rgba(0,0,0,0.1)), color-stop(1,#000));
 }
-
-#meal-info{
-    
-}
-
 
 
 
